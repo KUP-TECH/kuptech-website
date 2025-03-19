@@ -41,7 +41,8 @@
 </head>
 
 <body class="bg-gray-700">
-  
+
+  {{ $slot }}
 
 </body>
 
