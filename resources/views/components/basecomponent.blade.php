@@ -38,6 +38,15 @@
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="{{ asset('thirdparty/material-kit') }}/js/material-kit.min.js?v=3.1.0" type="text/javascript"></script>
+  <style>
+    .custom-img{
+      height: 35px;
+      weight: 35px;
+      
+  
+    }
+    
+  </style>
 </head>
 
 <body class="bg-gray-700">
