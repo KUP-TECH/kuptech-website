@@ -17,22 +17,25 @@
             <div class="col d-none d-md-block ">
               <img src="{{asset('assets/img/KT.png')}}" class="img-fluid">
             </div>
+                </div>
+        <div class="containermt-7 p-3 px-5 text-justify bg-secondary bg">
+        <div class="container-fluid sm-lg px-5 text-center text-white opacity-9">
+            <div class="row gx-10">
+            <div class="col">
+            <div class="p-5 fs-2 fw-bold opacity-7 ">RECENT PROJECT</div>
+                 <div class="col d-none d-md-block">
+                 <img src="{{asset('assets/img/laundry.png')}}" class="img img-fluid">  
+                 </div>
+                <p class="f-2 p-4 text-white opacity-6 text-justify text-center">This our Project for Laravel and Bootstrap5.</p>
+            </div>
+            <div class="col">
+            <div class="p-5 fs-2 fw-bold opacity-7">ABOUT OUR COMPANY</div>
+                <p class="fs-2 text-white opacity-6 text-justify"> KupTech IT Solution management system designed to streamline operations for laundry businesses. Built using Laravel with Blade and Bootstrap 5, it offers features such as order tracking, SMS updates, inventory management, and an intuitive POS system. The system enhances efficiency by automating tasks like customer notifications and payment processing, ensuring a seamless experience for both business owners and customers. With a user-friendly interface and robust functionality, KupTech aims to modernize the laundry service industry by integrating technology-driven solutions.</p>
+            </div>
+            </div>
         </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <footer>
+         </div>
+     <footer>
         <div class="container-fluid bg-gray-300 text-dark text-center py-3 fixed-bottom">
         
         <div class="social-icon">
