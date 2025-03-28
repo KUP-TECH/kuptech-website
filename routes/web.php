@@ -6,3 +6,5 @@ use App\Http\Controllers\LandingPageController;
 
 
 Route::get('/', [LandingPageController::class, 'index'])->name('home');
+
+Route::get('/root', [LandingPageController::class, 'home_page'])->name('homepage');

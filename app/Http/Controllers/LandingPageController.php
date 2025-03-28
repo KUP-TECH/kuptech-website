@@ -11,4 +11,9 @@ class LandingPageController extends Controller
 
         return view('pages.landing');
     }
+    public function home_page () {
+        
+
+        return view('pages.homepage');
+    }
 }
