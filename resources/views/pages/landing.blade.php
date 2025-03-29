@@ -4,6 +4,29 @@
         function onSubmit(token) {
             document.getElementById("msg-form").submit();
         }
+
+        function showMsgStatus() {
+
+
+            console.log('show modal');
+            let msgStatus = document.getElementById('msgStatus');
+            console.log(msgStatus);
+            let modal = new bootstrap.Modal(msgStatus);
+            modal.show();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+
+
+            
+            
+            @if(session('success') !== null)
+                console.log('success');
+                showMsgStatus();
+            @endif
+        });
+        
     </script>
 
     <style> 
@@ -49,17 +72,10 @@
                 <div class="col">
                     <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
                 </div>
-                {{--
-                <div class="col">
-                </div>
-                <div class="col d-flex flex-row justify-content-end align-items-center py-2">
-                    <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>        
-                </div>
-                --}}
+                
                 <div class="col d-flex flex-row justify-content-end align-items-center py-2">
                     <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#requestForm">CONTACT US
                     </button> 
-                    
                 </div>
             </div>
         </nav>
@@ -220,7 +236,23 @@
      
     </section>
          --}}
-        
+    
+
+    <div class="modal fade" id="msgStatus" tabindex="-1" aria-labelledby="msgStatusLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title text-capitalize">
+                        Message Status
+                    </h6>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-4 text-success fw-bold">{{ session('success') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
         
     
     

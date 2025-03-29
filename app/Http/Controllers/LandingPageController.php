@@ -21,6 +21,8 @@ class LandingPageController extends Controller
     public function handle_msg(Request $request) {
         
 
-        redirect()->to('home');
+
+        
+        return back()->with('success', 'Message sent successfully. We will respond in due time');
     }
 }
