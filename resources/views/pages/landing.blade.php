@@ -45,16 +45,53 @@
                 <div class="col">
                     <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
                 </div>
-                <div class="col">
-                </div>
-                <div class="col d-flex flex-row justify-content-end align-items-center py-2">
-                    <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>
-                </div>
-            </div>
+                
+                    {{--
+                    <div class="col">
+                    </div>
+                    <div class="col d-flex flex-row justify-content-end align-items-center py-2">
+                    <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>        
+                    </div>
+                    --}}
+                    <div class="col d-flex flex-row justify-content-end align-items-center py-2">
+                        <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">CONTACT US
+                        </button>
+                       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="class modal-dialog modal-fullscreen-sm-down">
+                                <div class="class modal-content">
+                                    <div class="class modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                        Fill UP
+                                        </h1>
+                                        <button 
+                                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="class modal-body">
+                                        <form>
+                                        <div class="class mb-3">
+                                            <label for="email-address" class="col-form-label">email-address
+                                            </label>
+                                            <input type="text" class="form-control" id="email-address">
+                                        </div>
+                                        <div class="class mb-3">
+                                            <label for="message-text" class="col-form-label">Message:</label>
+                                            <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    <div class="class modal-footer">
+                                        <button type="button" class="btn btn-outline-dark fw-bold m-0">Send message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+              
+                    </div>
         </nav>
     </div>
 
-
+    
     
 
 
@@ -128,9 +165,11 @@
 
     </div>
 
-{{-- 
+    
+    {{-- 
     <section class="my-5 py-5">
 
+    
 
 
         <div class="container">
@@ -210,8 +249,8 @@
          --}}
         
         
-
-
+    
+        
 
      <footer>
         <div class="container-fluid bg-gray-300 text-dark text-center py-1 ">
