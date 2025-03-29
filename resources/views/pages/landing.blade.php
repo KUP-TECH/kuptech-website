@@ -42,9 +42,9 @@
     <div class="container position-sticky top-0">
         <nav class="position-absolute bg-opacity-4 rounded start-0 end-0 bg-gray-300 mt-2 px-3">
             <div class="row align-items-center">
-                <div class="col">
-                    <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
-                </div>
+                    <div class="col">
+                        <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
+                    </div>
                 
                     {{--
                     <div class="col">
@@ -53,41 +53,58 @@
                     <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>        
                     </div>
                     --}}
-                    <div class="col d-flex flex-row justify-content-end align-items-center py-2">
-                        <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">CONTACT US
-                        </button>
-                       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="class modal-dialog modal-fullscreen-sm-down">
-                                <div class="class modal-content">
-                                    <div class="class modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                        Fill UP
-                                        </h1>
-                                        <button 
-                                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <div class="col d-flex flex-row justify-content-end align-items-center py-2">
+                        <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#requestForm">CONTACT US
+                        </button> 
+                        <div class="modal fade" id="requestForm">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h6 class="class modal-title text-capitalize">
+                                           SEND US 
+                                        </h6>
+                                        <button class="btn-close" type="button"data-bs-dismiss="modal">
                                         </button>
                                     </div>
-                                    <div class="class modal-body">
-                                        <form>
-                                        <div class="class mb-3">
-                                            <label for="email-address" class="col-form-label">email-address
-                                            </label>
-                                            <input type="text" class="form-control" id="email-address">
-                                        </div>
-                                        <div class="class mb-3">
-                                            <label for="message-text" class="col-form-label">Message:</label>
-                                            <textarea class="form-control" id="message-text"></textarea>
-                                        </div>
+                                    <div class="modal-body p-5 my-0">
+                                        <form class="need-validation" autocomplete="off" novalidate>
+                                            <div class="form-floating">
+                                                <input
+                                                 type="text"
+                                                 class="form-control rounded-3"
+                                                  id="floatingName"
+                                                   placeholder="Your Full Name"
+                                                    required/>
+                                                    <label for="floatingName">Your Full Name</label>
+                                            </div>
+                                                <div class="form-floating">
+                                                        <input
+                                                            type="email"
+                                                            class="form-control rounded-3"
+                                                            id="floatingName"
+                                                            placeholder="Your email Address"
+                                                            required/>
+                                                            <label for="floatingName"> Your Email Address</label>
+                                                 </div>
+                                                    <div class="form-floating">
+                                                        <textarea
+                                                             id="floatingNote"
+                                                             class="form-control"
+                                                             placeholder="Email Address"
+                                                             style="height: 100px;"
+                                                             required>
+                                                            </textarea>
+                                                            <label for="floatingNote">Special Request</label>
+                                                    </div>
+                                                        <button class="w-100 mb-2 btn-btn-lg rounded-4 btn btn-outline-dark fw-bold m-0 fs-6 fw-semibold py-3"
+                                                        type="submit">Send Request</button>
                                         </form>
-                                    </div>
-                                    <div class="class modal-footer">
-                                        <button type="button" class="btn btn-outline-dark fw-bold m-0">Send message</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-              
-                    </div>
+                        </div>           
+                </div>
+           </div>
         </nav>
     </div>
 
