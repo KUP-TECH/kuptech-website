@@ -16,4 +16,11 @@ class LandingPageController extends Controller
 
         return view('pages.homepage');
     }
+
+
+    public function handle_msg(Request $request) {
+        
+
+        redirect()->to('home');
+    }
 }

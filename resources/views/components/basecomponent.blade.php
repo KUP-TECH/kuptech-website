@@ -37,6 +37,7 @@
   <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
   <script src="{{ asset('thirdparty/material-kit') }}/js/material-kit.min.js?v=3.1.0" type="text/javascript"></script>
   <style>
 

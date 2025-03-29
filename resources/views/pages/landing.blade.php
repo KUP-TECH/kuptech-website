@@ -1,6 +1,10 @@
 <x-basecomponent>
     {{-- Custom CSS --}}
-
+     <script>
+        function onSubmit(token) {
+            document.getElementById("msg-form").submit();
+        }
+    </script>
 
     <style> 
 
@@ -40,72 +44,26 @@
 
 
     <div class="container position-sticky top-0">
-   <nav class="position-absolute bg-opacity-4 rounded start-0 end-0 bg-gray-300 mt-2 px-3">
-      <div class="row align-items-center">
-         <div class="col">
-            <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
-         </div>
-         {{--
-         <div class="col">
-         </div>
-         <div class="col d-flex flex-row justify-content-end align-items-center py-2">
-            <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>        
-         </div>
-         --}}
-         <div class="col d-flex flex-row justify-content-end align-items-center py-2">
-            <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#requestForm">CONTACT US
-            </button> 
-            <div class="modal fade" id="requestForm">
-               <div class="modal-dialog">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <h6 class="class modal-title text-capitalize">
-                           SEND US 
-                        </h6>
-                        <button class="btn-close" type="button"data-bs-dismiss="modal">
-                        </button>
-                     </div>
-                     <div class="modal-body p-5 my-0">
-                        <form class="need-validation" autocomplete="off" novalidate>
-                           <div class="form-floating">
-                              <input
-                                 type="text"
-                                 class="form-control rounded-3"
-                                 id="floatingName"
-                                 placeholder="Your Full Name"
-                                 required/>
-                              <label for="floatingName">Your Full Name</label>
-                           </div>
-                           <div class="form-floating">
-                              <input
-                                 type="email"
-                                 class="form-control rounded-3"
-                                 id="floatingName"
-                                 placeholder="Your email Address"
-                                 required/>
-                              <label for="floatingName"> Your Email Address</label>
-                           </div>
-                           <div class="form-floating">
-                              <textarea
-                                 id="floatingNote"
-                                 class="form-control"
-                                 placeholder="Email Address"
-                                 style="height: 100px;"
-                                 required>
-                              </textarea>
-                              <label for="floatingNote">Special Request</label>
-                           </div>
-                           <button class="w-100 mb-2 btn-btn-lg rounded-4 btn btn-outline-dark fw-bold m-0 fs-6 fw-semibold py-3"
-                              type="submit">Send Request</button>
-                        </form>
-                     </div>
-                  </div>
-               </div>
+        <nav class="position-absolute bg-opacity-4 rounded start-0 end-0 bg-gray-300 mt-2 px-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <a class="navbar-brand fw-bold text-dark opacity-8" href="{{ route('home') }}"> <span> <img src="{{asset('assets/img/KUPTECH_BANNER.png')}}" alt="" class="custom-img-icon"> </span>  {{ config('app.name') }} </a>
+                </div>
+                {{--
+                <div class="col">
+                </div>
+                <div class="col d-flex flex-row justify-content-end align-items-center py-2">
+                    <a class="btn btn-outline-dark fw-bold m-0" href="#">CONTACT US</a>        
+                </div>
+                --}}
+                <div class="col d-flex flex-row justify-content-end align-items-center py-2">
+                    <button type="button" class="btn btn-outline-dark fw-bold m-0" data-bs-toggle="modal" data-bs-target="#requestForm">CONTACT US
+                    </button> 
+                    
+                </div>
             </div>
-         </div>
-      </div>
-   </nav>
-</div>
+        </nav>
+    </div>
     
     
 
@@ -265,7 +223,59 @@
         
         
     
-        
+    
+    <div class="modal fade" id="requestForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title text-capitalize">
+                        EMAIL US
+                    </h6>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <form action="{{ route('send') }}" method="POST" id="msg-form">
+                    @csrf
+                    <div class="modal-body p-5 my-0">
+
+
+                        <div class="input-group border rounded my-3">
+                            <input type="text" class="form-control px-2" name="name" placeholder="Full name or Company name">
+                        </div>
+
+                        <div class="input-group border rounded align-items-center justify-content-center my-3">
+                            <p class="position-absolute start-0 my-0 px-2 text-center fs-7">+63</p>
+                            <input type="number" class="form-control px-1 ms-5 border-start" name="contactno" placeholder="9123456789">
+                        </div>
+
+
+                        <div class="input-group border rounded my-3">
+                            <input type="email" class="form-control px-2" name="email" placeholder="Email address">
+                        </div>
+                        
+                        <div class="input-group border rounded my-3">
+                            <input type="text" class="form-control px-2" name="address" placeholder="Address">
+                        </div>
+
+                        <div class="input-group border rounded my-3">
+                            <textarea type="text" class="form-control px-2" name="msg" placeholder="Message" rows="10" ></textarea>
+                        </div>
+
+                        <button class="g-recaptcha btn btn-primary" 
+                            data-sitekey="{{ config('keys')['RECAPCHA_SITE_KEY'] }}" 
+                            data-callback='onSubmit' 
+                            data-action='submit'>Submit
+                        </button>
+
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
 
      <footer>
         <div class="container-fluid bg-gray-300 text-dark text-center py-1 ">
