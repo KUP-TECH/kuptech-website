@@ -242,13 +242,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title text-capitalize">
+                    <h6 class="modal-title text-capitalize text-success fs-4">
                         Message Status
                     </h6>
                     <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="fs-4 text-success fw-bold">{{ session('success') }}</p>
+                    <p class="fs-4 text-dark fs-7 opacity-5 fw-bold">{{ session('success') }}</p>
                 </div>
             </div>
         </div>
